@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Spiralytics - Wine Prediction</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+<h3>Spiralytics - Wine Prediction</h3>
+<div id="main">
+    <div class="red-graphs">
+        <img class="image" src="static/images/Red-wine-volatile acidity-alcohol.png">
+        <p> This is a graph about stuff and things </p>
+        <img class="image" src="static/images/Red-wine-volatile acidity-sulphates.png">
+        <p> Graph 2 </p>
+    </div>
+    <div class="white-graphs">
+        <img class="image" src="static/images/White-wine-free sulfur dioxide-alcohol.png">
+        <p> Graph 3 </p>
+        <img class="image" src="static/images/White-wine-volatile acidity-free sulfur dioxide.png">
+        <p> Graph 4 </p>
+    </div>
+    <div id="predict-form">
+        <h3>Prediction Form</h3>
+        <form action="/predict" method="POST">
+            <label for="fixed acidity">Fixed Acidity</label>
+            <input type="number" step="0.01" id="fixed acidity" name="fixed acidity">
+            <br>
+            <label for="volatile acidity">Volatile Acidity</label>
+            <input type="number" step="0.01" id="volatile acidity" name="volatile acidity">
+            <br>
+            <label for="citric acid">Petal Length</label>
+            <input type="number" step="0.01" id="citric acid" name="citric acid">
+            <br>
+            <label for="residual sugar">Residual Sugar</label>
+            <input type="number" step="0.01" id="residual sugar" name="residual sugar">
+            <br>
+            <label for="chlorides">Chlorides</label>
+            <input type="number" step="0.01" id="chlorides" name="chlorides">
+            <br>
+            <label for="free sulfur dioxide">Free Sulfur Dioxide</label>
+            <input type="number" step="0.01" id="free sulfur dioxide" name="free sulfur dioxide">
+            <br>
+            <label for="total sulfur dioxide">Total Sulfur Dioxide</label>
+            <input type="number" step="0.01" id="total sulfur dioxide" name="total sulfur dioxide">
+            <br>
+            <label for="density">Density</label>
+            <input type="number" step="0.01" id="density" name="density">
+            <br>
+            <label for="pH">pH</label>
+            <input type="number" step="0.01" id="pH" name="pH">
+            <br>
+            <label for="sulphates">sulphates</label>
+            <input type="number" step="0.01" id="sulphates" name="sulphates">
+            <br>
+            <label for="alcohol">Density</label>
+            <input type="number" step="0.01" id="alcohol" name="alcohol">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>
