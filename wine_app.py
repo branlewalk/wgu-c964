@@ -6,8 +6,6 @@ from joblib import load
 
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-server = app.server
-
 user_input = None
 
 
