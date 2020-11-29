@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT wine-app:server
+web: gunicorn wine-app:app
