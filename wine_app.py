@@ -15,9 +15,12 @@ def index():
     return flask.render_template("index.html")
 
 
-def value_predictor(to_predict_list):
+def value_predictor(wine_type, to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1, 11)
-    loaded_model = load("red_wine_model.joblib")
+    if wine_type == "white":
+        loaded_model = load("white_wine_model.joblib")
+    elif wine_type == "red":
+        loaded_model = load("red_wine_model.joblib")
     result = loaded_model.predict(to_predict)
     return result[0]
 
@@ -27,8 +30,11 @@ def result():
     if request.method == "POST":
         to_predict_list = request.form.to_dict()
         to_predict_list = list(to_predict_list.values())
+        wine_type = to_predict_list[0]
+        to_predict_list = to_predict_list[1:]
+        print(to_predict_list)
         to_predict_list = list(map(float, to_predict_list))
-        result = value_predictor(to_predict_list)
+        result = value_predictor(wine_type, to_predict_list)
         prediction = str(result)
         if result == 0:
             prediction = "Poor quality"
