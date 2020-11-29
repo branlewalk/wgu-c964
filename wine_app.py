@@ -1,13 +1,13 @@
-import os
-import pandas as pd
-import numpy as np
 import flask
-from joblib import load
+import numpy as np
 from flask import Flask, render_template, request
+from joblib import load
 
-STATIC_DIR = os.path.abspath('../static')
 
 app = Flask(__name__, static_url_path='/static')
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+user_input = None
 
 
 @app.route("/")
@@ -22,7 +22,7 @@ def value_predictor(to_predict_list):
     return result[0]
 
 
-@app.route("/predict", methods = ["POST"])
+@app.route("/predict", methods=["POST"])
 def result():
     if request.method == "POST":
         to_predict_list = request.form.to_dict()
@@ -30,7 +30,23 @@ def result():
         to_predict_list = list(map(float, to_predict_list))
         result = value_predictor(to_predict_list)
         prediction = str(result)
+        if result == 0:
+            prediction = "Poor quality"
+        elif result == 1:
+            prediction = "Normal quality"
+        elif result == 2:
+            prediction = "Excellent quality"
         return render_template("predict.html", prediction=prediction)
+
+
+@app.route("/predict")
+def predict():
+    return render_template("predict.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
