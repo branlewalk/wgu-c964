@@ -13,18 +13,44 @@
 
         <!--Navigation Bar-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <a class="navbar-brand" href="#" >Spiralytics</a>
+            <a class="navbar-brand" href="/" >Spiralytics</a>
             <div class="navbar-header">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/">Dashboard</a>
+                    <a class="nav-item nav-link" href="/dashboard">Dashboard</a>
                     <a class="nav-item nav-link" href="/predict">Predict</a>
-                    <a class="nav-item nav-link active" href="/about">About<span class="sr-only">(current)</span></a></li>
+                    <a class="nav-item nav-link active" href="/about">About<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
                 </div>
             </div>
         </nav>
-        <div>
-            <br>
-            <h3> About Spiralytics</h3>
+        <div id="main">
+           <div class="user-guide">
+               <h4>User Guide</h4>
+               <br>
+               <h6>Click on the “Dashboard” Tab to navigate to the dashboard</h6>
+               <p>There are 2 versions of the same two graphs, notes are present to breaks down the results.
+                    There is also a graph showing the amount of quality nodes that are present in each graph.</p>
+               <br>
+               <h6>Click on the “Predict” Tab to navigate to the prediction form</h6>
+               <p>In the predict form, first select the wine type and then enter the chemical components metrics.
+                    Once the metrics have been entered, press “submit”. The box labeled “results” will show which
+                    quality classification the wine is.</p>
+               <br>
+               <h6>Click on the “About” Tab to read about the application.</h6>
+               <p>The about page has some sample data to test
+                    the model. Directions on how to use the site are also on the about page.</p>
+</p>
+            </div>
+            <div class="sample-data">
+                <h4>Sample Data</h4>
+                <br>
+                <h6>Red Wine Sample Data</h6>
+                <img class="image" src="static/images/sample_red copy.png">
+                <br>
+                <br>
+                <h6>White Wine Sample Data</h6>
+                <img class="image" src="static/images/sample_white copy.png">
+            </div>
         </div>
     </body>
 </html>

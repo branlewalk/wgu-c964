@@ -3,14 +3,14 @@ h3, h1 {
 }
 
 #header {
- font-family: "Arial", serif;
+    font-family: "Arial", serif;
 }
 
 #main {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     font-family: "Arial", serif;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto auto;
+    box-sizing: border-box;
 }
 
 #title {
@@ -21,19 +21,60 @@ h3, h1 {
     padding-top: 15px;
     border-radius: 5px;
     background-color: #ff9999;
+    min-width: 400px;
+    max-width: 600px;
     margin: 10px;
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 2;
-
 }
 
 .white-graphs {
     padding-top: 15px;
     border-radius: 5px;
     background-color: #ffffcc;
+    min-width: 400px;
+    max-width: 600px;
     margin: 10px;
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 2;
+}
+.descriptive-graphs {
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+    background-color: #99ccff;
+    min-width: 400px;
+    max-width: 600px;
+    margin: 10px;
+}
+
+.user-guide {
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+    background-color: #99ccff;
+    min-width: 400px;
+    max-width: 600px;
+    margin: 10px;
+}
+
+.sample-data {
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+    background-color: #99ccff;
+    min-width: 400px;
+    max-width: 1000px;
+    margin: 10px;
+}
+
+.welcome {
+    max-width: 500px;
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+    background-color: #99ccff;
+    margin: 10px;
+}
+
+.login {
+    max-width: 500px;
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+    background-color: #99ccff;
+    margin: 10px;
 }
 
 .image {
@@ -46,8 +87,6 @@ h3, h1 {
     max-width: 500px;
     padding: 20px;
     margin: 10px;
-    grid-column: 3 / span 1;
-    grid-row: 2 / span 1;
 }
 
 input[type=number], select, textarea{
@@ -58,10 +97,6 @@ input[type=number], select, textarea{
   float: right;
   resize: vertical;
 }
-
-/*label {
-  padding: 12px 12px 12px 0;
-} */
 
 input[type=submit] {
   background-color: #4CAF50;
@@ -89,7 +124,7 @@ input[type=submit] {
     font-weight: 400;
     width: 100%;
 }
-/* Clear floats after the columns */
+
 .form-row:after {
   content: "";
   display: table;
